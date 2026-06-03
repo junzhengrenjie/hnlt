@@ -1,0 +1,59 @@
+---
+import SEO from "../components/SEO.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  keywords?: string[];
+  noindex?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <SEO
+      title={props.title}
+      description={props.description}
+      image={props.image}
+      canonicalURL={props.canonicalURL}
+      type={props.type}
+      publishedTime={props.publishedTime}
+      modifiedTime={props.modifiedTime}
+      author={props.author}
+      keywords={props.keywords}
+      noindex={props.noindex}
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="候鸟旅途 RSS"
+      href="/rss.xml"
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

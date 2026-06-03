@@ -1,0 +1,107 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  keywords?: string[];
+  lang?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = "https://picsum.photos/seed/travelchina/1200/630",
+  canonicalURL = Astro.url.href,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  author = "候鸟旅途",
+  keywords = [],
+  lang = "zh-CN",
+  noindex = false,
+} = Astro.props;
+
+const siteName = "候鸟旅途 · Migratory Diaries";
+const siteURL = Astro.site?.origin || "https://houniao-journey.life";
+const fullImageURL = new URL(image, siteURL).href;
+const fullTitle = type === "article" ? `${title} - ${siteName}` : `${title} | ${siteName}`;
+const allKeywords = ["旅游", "旅行攻略", "自由行", "中国旅游", ...keywords];
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": type === "article" ? "Article" : "WebPage",
+  headline: title,
+  description: description,
+  url: canonicalURL,
+  image: fullImageURL,
+  author: {
+    "@type": "Person",
+    name: author,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: siteName,
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/favicon.svg", siteURL).href,
+    },
+  },
+  ...(type === "article" && {
+    articleSection: "旅游攻略",
+    wordCount: description.length,
+  }),
+  ...(publishedTime && { datePublished: publishedTime }),
+  ...(modifiedTime && { dateModified: modifiedTime }),
+  ...(type === "article" && {
+    about: {
+      "@type": "TouristDestination",
+      name: title,
+    },
+  }),
+});
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={allKeywords.join(", ")} />}
+<meta name="author" content={author} />
+<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large"} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:image" content={fullImageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content={lang} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImageURL} />
+
+<!-- 移动端优化 -->
+<meta name="theme-color" content="#0891b2" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+{author && <meta property="article:author" content={author} />}
+
+<!-- JSON-LD -->
+<script type="application/ld+json" set:html={jsonLd}></script>

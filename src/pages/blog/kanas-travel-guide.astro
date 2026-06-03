@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const d={n:"新疆喀纳斯",s:"kanas",dt:"2026-01-25",ds:"从乌鲁木齐出发，途经天山天池、可可托海、布尔津、喀纳斯、禾木、白哈巴——12天北疆大环线自驾终极攻略。"};
+---
+<BaseLayout title={`${d.n}·北疆自驾环线终极攻略`} description={d.ds} image={`https://picsum.photos/seed/${d.s}/1200/630`} type="article" publishedTime={`${d.dt}T08:00:00+08:00`} author="候鸟旅途" keywords={["喀纳斯","新疆","自驾","北疆","禾木","白哈巴"]}>
+  <article class="article">
+    <header class="article-header"><h1>🚙 {d.n}·北疆自驾环线终极攻略</h1><div class="article-meta">📅 <time datetime={d.dt}>{new Date(d.dt).toLocaleDateString("zh-CN",{year:"numeric",month:"long",day:"numeric"})}</time> · ✍️ 候鸟旅途</div></header>
+    <img class="article-featured-img" src={`https://picsum.photos/seed/${d.s}/1200/600`} alt="喀纳斯秋色">
+    <div class="article-body">
+      <p>喀纳斯，被誉为"神的后花园"，是中国最美的湖泊之一。秋天的喀纳斯是一年中最美的季节——金色的白桦林、碧绿的湖水、远处的雪山、禾木村的晨雾——随便拍都是国家地理级别的照片。北疆大环线是中国最美的自驾路线之一。</p>
+      <div class="info-box"><h4>📌 核心信息</h4><p style="margin-bottom:0;"><strong>最佳季节：</strong>9月20日–10月10日（秋色巅峰）| <strong>游玩天数：</strong>12天 | <strong>喀纳斯门票：</strong>¥230 | <strong>禾木：</strong>¥102 | <strong>总里程：</strong>约3000km</p></div>
+      <h2>🗺️ 12日大环线</h2>
+      <div class="itinerary"><h4>Day 1-3</h4><div class="itinerary-item"><div class="itinerary-time">东进</div><div class="itinerary-desc">乌鲁木齐→天山天池→可可托海（3号矿坑+额尔齐斯大峡谷）→布尔津（五彩滩日落）</div></div><div class="itinerary-item"><div class="itinerary-time">Day 4-6</div><div class="itinerary-desc">布尔津→喀纳斯（观鱼台+三湾徒步）→白哈巴（西北第一村）→禾木村（晨雾日出）</div></div><div class="itinerary-item"><div class="itinerary-time">Day 7-9</div><div class="itinerary-desc">禾木→乌尔禾魔鬼城→克拉玛依→赛里木湖→果子沟大桥</div></div><div class="itinerary-item"><div class="itinerary-time">Day 10-12</div><div class="itinerary-desc">赛里木湖→那拉提草原→独库公路→乌鲁木齐返程</div></div></div>
+      <div class="tip-box"><h4>⚠️ 自驾须知</h4><ul><li>新疆自驾<strong>必须带身份证+驾驶证+行驶证</strong>，加油要刷身份证，每个检查站都要下车安检。</li><li>9月底北疆已开始下雪，带<strong>冲锋衣+羽绒服+防滑鞋</strong>。</li><li>喀纳斯景区内不能自驾，车停贾登峪换乘景区大巴。禾木村可以开车到村口换乘。</li><li>独库公路10月中旬开始封路，9月是最后窗口期。</li></ul></div>
+      <h2>🍜 美食</h2><p>大盘鸡（¥88）、手抓饭（¥38）、烤包子（¥3/个）、馕坑肉、酸奶、卡瓦斯。布尔津夜市烤冷水鱼是一绝。</p>
+      <h2>💰 预算</h2><p>12日自驾：机票 ¥3000 + 租车 ¥4000 + 油费过路费 ¥2500 + 门票 ¥800 + 住宿11晚 ¥3300 + 餐饮 ¥2000 ≈ <strong>¥15600</strong>（4人拼车可降到¥9000/人）</p>
+    </div>
+  </article>
+</BaseLayout>

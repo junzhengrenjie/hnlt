@@ -1,0 +1,226 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = [
+  {
+    slug: "quanzhou-travel-guide",
+    title: "🏮 福建泉州——2026年最火年味之城，簪花与海丝的烟火人间",
+    date: "2026-06-05",
+    description: "2026春节爆款！1618万游客、小红书年味TOP1、蟳埔簪花围体验、22处世遗全打卡。寻找最浓中国年味，泉州是你不二之选。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/quanzhou/600/400", imageAlt: "泉州西街开元寺",
+    tags: ["泉州","福建","簪花","世界遗产","年味","闽南美食"],
+  },
+  {
+    slug: "lijiang-travel-guide",
+    title: "🏔️ 云南丽江五天四晚深度游攻略",
+    date: "2026-06-03",
+    description: "古城漫步、玉龙雪山、泸沽湖——五天四晚深度游，人均¥3000玩转丽江。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/lijiang/600/400", imageAlt: "丽江古城",
+    tags: ["丽江","云南","古城","玉龙雪山","泸沽湖"],
+  },
+  {
+    slug: "jiuzhaigou-travel-guide",
+    title: "🍂 四川九寨沟秋季全攻略——最佳观景期与路线规划",
+    date: "2026-05-28",
+    description: "九寨归来不看水！秋季最佳观赏期10月中下旬，五彩池、珍珠滩瀑布、诺日朗瀑布一网打尽。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/jiuzhaigou/600/400", imageAlt: "九寨沟五彩池",
+    tags: ["九寨沟","四川","秋季","世界遗产"],
+  },
+  {
+    slug: "zhangjiajie-travel-guide",
+    title: "🏞️ 湖南张家界——阿凡达取景地三日深度游",
+    date: "2026-05-22",
+    description: "张家界国家森林公园、天门山、玻璃栈道、袁家界——电影《阿凡达》悬浮山原型地全攻略。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/zhangjiajie/600/400", imageAlt: "张家界悬浮山",
+    tags: ["张家界","湖南","国家森林公园","阿凡达"],
+  },
+  {
+    slug: "sanya-travel-guide",
+    title: "🌴 海南三亚——国内最佳海岛度假天堂全攻略",
+    date: "2026-05-18",
+    description: "亚龙湾、蜈支洲岛、天涯海角、南山寺——三亚四天三晚海岛度假攻略，阳光沙滩比基尼。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/sanya/600/400", imageAlt: "三亚海滩",
+    tags: ["三亚","海南","海岛","度假","海滩"],
+  },
+  {
+    slug: "lasa-travel-guide",
+    title: "🏛️ 西藏拉萨——朝圣之旅，离天堂最近的地方",
+    date: "2026-05-12",
+    description: "布达拉宫、大昭寺、八廓街、纳木错——拉萨四日深度文化之旅，感受藏传佛教的魅力。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/lasa/600/400", imageAlt: "布达拉宫",
+    tags: ["拉萨","西藏","朝圣","布达拉宫","高原"],
+  },
+  {
+    slug: "xian-travel-guide",
+    title: "🏯 陕西西安——十三朝古都，穿越千年历史之旅",
+    date: "2026-05-06",
+    description: "兵马俑、大雁塔、钟鼓楼、回民街、华清池——西安四天三晚历史文化美食全攻略。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/xian/600/400", imageAlt: "西安兵马俑",
+    tags: ["西安","陕西","兵马俑","古都","美食"],
+  },
+  {
+    slug: "guilin-travel-guide",
+    title: "⛰️ 广西桂林——桂林山水甲天下，阳朔山水甲桂林",
+    date: "2026-04-30",
+    description: "漓江竹筏、阳朔西街、十里画廊、龙脊梯田——桂林阳朔四日游，感受中国最美山水画卷。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/guilin/600/400", imageAlt: "桂林漓江",
+    tags: ["桂林","广西","阳朔","漓江","山水"],
+  },
+  {
+    slug: "beijing-travel-guide",
+    title: "🏰 北京——帝都五日深度游，从故宫到长城",
+    date: "2026-04-24",
+    description: "故宫、长城、天安门、颐和园、南锣鼓巷——北京五日经典路线，感受千年帝都的魅力。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/beijing/600/400", imageAlt: "北京故宫",
+    tags: ["北京","故宫","长城","帝都","文化"],
+  },
+  {
+    slug: "hangzhou-travel-guide",
+    title: "🌸 浙江杭州——上有天堂，下有苏杭，西湖漫游记",
+    date: "2026-04-18",
+    description: "西湖十景、灵隐寺、龙井茶园、西溪湿地——杭州三日慢生活旅行攻略，感受江南韵味。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/hangzhou/600/400", imageAlt: "杭州西湖",
+    tags: ["杭州","浙江","西湖","江南","龙井"],
+  },
+  {
+    slug: "suzhou-travel-guide",
+    title: "🏡 江苏苏州——园林之城，小桥流水人家的江南梦",
+    date: "2026-04-12",
+    description: "拙政园、留园、虎丘、平江路、山塘街——苏州三日园林文化之旅，品味江南私家园林。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/suzhou/600/400", imageAlt: "苏州园林",
+    tags: ["苏州","江苏","园林","江南","水乡"],
+  },
+  {
+    slug: "huangshan-travel-guide",
+    title: "⛰️ 安徽黄山——五岳归来不看山，黄山归来不看岳",
+    date: "2026-04-05",
+    description: "迎客松、光明顶、西海大峡谷、宏村——黄山三日登山攻略，看云海日出奇松怪石。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/huangshan/600/400", imageAlt: "黄山云海",
+    tags: ["黄山","安徽","登山","云海","宏村"],
+  },
+  {
+    slug: "xiamen-travel-guide",
+    title: "🌊 福建厦门——鼓浪屿的文艺慢时光",
+    date: "2026-03-28",
+    description: "鼓浪屿、厦门大学、曾厝垵、南普陀寺——厦门三日文艺之旅，喝咖啡看海发呆。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/xiamen/600/400", imageAlt: "鼓浪屿",
+    tags: ["厦门","福建","鼓浪屿","文艺","海岛"],
+  },
+  {
+    slug: "qinghaihu-travel-guide",
+    title: "💙 青海青海湖——中国最美湖泊自驾环湖攻略",
+    date: "2026-03-20",
+    description: "青海湖环湖公路、茶卡盐湖天空之镜、鸟岛——夏季青海湖自驾三日攻略，油菜花海骑马观鸟。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/qinghaihu/600/400", imageAlt: "青海湖油菜花",
+    tags: ["青海湖","青海","自驾","茶卡盐湖","油菜花"],
+  },
+  {
+    slug: "dunhuang-travel-guide",
+    title: "🐫 甘肃敦煌——丝绸之路上的明珠，莫高窟千年之约",
+    date: "2026-03-12",
+    description: "莫高窟、鸣沙山月牙泉、玉门关、雅丹魔鬼城——敦煌四日丝路文化之旅，骑骆驼看沙漠日落。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/dunhuang/600/400", imageAlt: "敦煌莫高窟",
+    tags: ["敦煌","甘肃","丝绸之路","莫高窟","沙漠"],
+  },
+  {
+    slug: "hulunbeier-travel-guide",
+    title: "🌿 内蒙古呼伦贝尔——中国最美大草原自驾攻略",
+    date: "2026-03-05",
+    description: "呼伦贝尔大草原、额尔古纳湿地、满洲里——夏季草原五日自驾，骑马、烤全羊、住蒙古包。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/hulunbeier/600/400", imageAlt: "呼伦贝尔草原",
+    tags: ["呼伦贝尔","内蒙古","草原","自驾","骑马"],
+  },
+  {
+    slug: "huangguoshu-travel-guide",
+    title: "💦 贵州黄果树瀑布——亚洲第一大瀑布震撼之旅",
+    date: "2026-02-25",
+    description: "黄果树大瀑布、天星桥、陡坡塘、荔波小七孔——贵州三日山水瀑布之旅，感受水的力量。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/huangguoshu/600/400", imageAlt: "黄果树瀑布",
+    tags: ["黄果树","贵州","瀑布","荔波","山水"],
+  },
+  {
+    slug: "changbaishan-travel-guide",
+    title: "❄️ 吉林长白山——天池之巅，冬季滑雪温泉之旅",
+    date: "2026-02-18",
+    description: "长白山天池、长白瀑布、地下森林、万达滑雪场——冬季长白山四日冰雪奇缘之旅。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/changbaishan/600/400", imageAlt: "长白山天池",
+    tags: ["长白山","吉林","天池","滑雪","温泉"],
+  },
+  {
+    slug: "chongqing-travel-guide",
+    title: "🔥 重庆——8D魔幻山城，火锅之都三日逛吃攻略",
+    date: "2026-02-10",
+    description: "洪崖洞、解放碑、磁器口、长江索道、南山一棵树——重庆三日魔幻之旅，吃遍重庆火锅。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/chongqing/600/400", imageAlt: "重庆洪崖洞",
+    tags: ["重庆","8D城市","火锅","洪崖洞","美食"],
+  },
+  {
+    slug: "taishan-travel-guide",
+    title: "🌅 山东泰山——五岳之首，日出东方朝圣之旅",
+    date: "2026-02-02",
+    description: "泰山日出、十八盘、南天门、玉皇顶——夜爬泰山看日出全攻略，感受一览众山小的震撼。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/taishan/600/400", imageAlt: "泰山日出",
+    tags: ["泰山","山东","日出","五岳","登山"],
+  },
+  {
+    slug: "kanas-travel-guide",
+    title: "🚙 新疆喀纳斯·北疆自驾环线终极攻略",
+    date: "2026-01-25",
+    description: "从乌鲁木齐出发，途经天山天池、可可托海、喀纳斯、禾木、白哈巴——12天北疆大环线自驾攻略。",
+    author: "候鸟旅途",
+    image: "https://picsum.photos/seed/kanas/600/400", imageAlt: "喀纳斯秋色",
+    tags: ["喀纳斯","新疆","自驾","北疆","禾木"],
+  },
+];
+---
+
+<BaseLayout
+  title="旅行攻略——20篇深度游指南，走遍中国"
+  description="候鸟旅途博客——收录云南丽江、四川九寨沟、湖南张家界、西藏拉萨等20个中国热门旅游目的地的详细攻略，景点指南、美食推荐、住宿交通全维度覆盖。"
+  keywords={["旅行攻略","自由行指南","中国旅游","深度游","丽江","九寨沟","张家界","拉萨"]}
+>
+  <section class="page-header">
+    <div class="container">
+      <h1>📝 旅行攻略</h1>
+      <p>20 篇深度攻略，覆盖中国最美目的地</p>
+    </div>
+  </section>
+
+  <section class="blog-list">
+    {posts.map((post) => (
+      <article class="blog-card">
+        <img class="blog-card__image" src={post.image} alt={post.imageAlt} loading="lazy" />
+        <div class="blog-card__body">
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.75rem;">
+            {post.tags.slice(0,4).map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+          <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+          <p>{post.description}</p>
+          <div class="blog-card__meta">
+            📅 {new Date(post.date).toLocaleDateString("zh-CN",{year:"numeric",month:"long",day:"numeric"})} · ✍️ {post.author}
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

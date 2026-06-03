@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="像候鸟一样旅行——追随季节，走遍中国最美的地方"
+  description="候鸟旅途——像候鸟一样随季节迁徙，追随中国最美的春夏秋冬。专注中国深度旅游攻略，涵盖云南、四川、西藏、新疆等 20+ 省份的实用旅行指南。"
+  keywords={["旅游攻略", "自由行", "中国旅游", "丽江", "九寨沟", "喀纳斯", "自驾游"]}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>🐦 像候鸟一样，追随季节去旅行</h1>
+      <p>
+        春下江南、夏入川西、秋赴北疆、冬避海南——<br/>在最美的季节，去最美的地方。
+      </p>
+      <a href="/blog" class="btn">📝 探索旅行攻略</a>
+    </div>
+    <div class="hero-divider"></div>
+  </section>
+
+  <!-- 热门目的地 -->
+  <section class="container" style="padding:4rem 0 2rem;">
+    <h2 class="section-title">🔥 热门目的地</h2>
+    <p class="section-subtitle">跟着候鸟的节奏，发现中国最美的风景</p>
+    <div class="destinations-grid">
+      <!-- 丽江 -->
+      <article class="img-card">
+        <img
+          class="img-card__image"
+          src="https://picsum.photos/seed/lijiang/600/340"
+          alt="丽江古城青石板路和红灯笼"
+          loading="lazy"
+        />
+        <div class="img-card__body">
+          <h3>🏔️ 云南 · 丽江</h3>
+          <p>古城漫步、玉龙雪山、泸沽湖——五天四晚深度游，人均 ¥3000 玩转丽江。</p>
+          <div class="tags">
+            <span class="tag">古城</span><span class="tag">雪山</span><span class="tag">泸沽湖</span><span class="tag">5天4晚</span>
+          </div>
+          <a href="/blog/lijiang-travel-guide" class="img-card__link">📖 阅读完整攻略 →</a>
+        </div>
+      </article>
+
+      <!-- 九寨沟 -->
+      <article class="img-card">
+        <img
+          class="img-card__image"
+          src="https://picsum.photos/seed/jiuzhaigou/600/340"
+          alt="九寨沟五彩池秋色"
+          loading="lazy"
+        />
+        <div class="img-card__body">
+          <h3>🍂 四川 · 九寨沟</h3>
+          <p>九寨归来不看水！秋季最佳观赏期 10 月中下旬，五彩池、珍珠滩瀑布全攻略。</p>
+          <div class="tags">
+            <span class="tag">世界遗产</span><span class="tag">彩林</span><span class="tag">瀑布</span>
+          </div>
+          <span style="color:#94a3b8;font-size:0.85rem;">🔜 攻略即将上线…</span>
+        </div>
+      </article>
+
+      <!-- 喀纳斯 -->
+      <article class="img-card">
+        <img
+          class="img-card__image"
+          src="https://picsum.photos/seed/kanas/600/340"
+          alt="喀纳斯秋季晨雾"
+          loading="lazy"
+        />
+        <div class="img-card__body">
+          <h3>🏜️ 新疆 · 喀纳斯</h3>
+          <p>神的后花园！禾木晨雾、白哈巴边境村、喀纳斯湖——北疆自驾终极攻略。</p>
+          <div class="tags">
+            <span class="tag">北疆</span><span class="tag">自驾</span><span class="tag">摄影天堂</span>
+          </div>
+          <span style="color:#94a3b8;font-size:0.85rem;">🔜 攻略即将上线…</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>🗺️ 让每一段旅行都有备而来</h2>
+      <p>
+        走过了 20+ 个省份，写下最真实的旅行体验。<br/>关注候鸟旅途，解锁更多深度攻略。
+      </p>
+      <a href="/blog" class="btn btn--accent">🌟 查看全部攻略</a>
+    </div>
+  </section>
+</BaseLayout>

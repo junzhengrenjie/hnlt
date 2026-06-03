@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="关于我——像候鸟一样旅行的博主"
+  description="我是候鸟旅途的作者。像候鸟随季节迁徙一样，春下江南、夏入川西、秋赴北疆、冬避海南。8年旅行经验，走遍20+省份，专注分享真实、有深度的旅行攻略。"
+  keywords={["旅行博主", "旅游达人", "自由行", "深度游", "中国旅游", "候鸟旅途"]}
+>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>👋 你好，我是候鸟</h1>
+      <p>一个像候鸟一样随季节旅行的人</p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <!-- 数据统计 -->
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">走过省份</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">打卡城市</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8</div>
+        <div class="stat-label">年旅行经验</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">深度攻略</div>
+      </div>
+    </div>
+
+    <!-- 个人介绍 -->
+    <p>
+      候鸟随季节迁徙，跨越千山万水——从北到南，从东到西。我也是如此。<strong>春天去江南看花，夏天去川西避暑，秋天去北疆追秋色，冬天去海南躲寒潮。</strong>像候鸟一样，我追着中国最美的季节跑。
+    </p>
+    <p>
+      8 年来，我用脚步丈量了 20+ 个省份、100+ 座城市。不做走马观花的打卡式旅行，不盲从网红滤镜——每一篇攻略都基于<strong>亲身经历</strong>，只写真实、有用、接地气的内容。
+    </p>
+
+    <!-- 旅行照片 -->
+    <img
+      src="https://picsum.photos/seed/travelgirl/800/360"
+      alt="旅行者在雪山前"
+      style="width:100%;border-radius:16px;margin:2rem 0;box-shadow:0 8px 30px rgba(0,0,0,0.1);"
+      loading="lazy"
+    />
+
+    <h2>🧭 我的旅行理念</h2>
+    <ul>
+      <li>🏨 <strong>只推荐亲自住过</strong>的酒店民宿——不接广告，不看钱写推荐</li>
+      <li>🍜 <strong>只写亲自吃过且觉得值得</strong>的餐厅——拒绝"网红滤镜"</li>
+      <li>📍 <strong>标注真实位置和路线</strong>——拒绝"氛围感"忽悠</li>
+      <li>💰 <strong>详细预算清单</strong>——帮你合理规划旅费，不花冤枉钱</li>
+      <li>📸 <strong>原图直出</strong>（偶尔调个色）——不做照骗</li>
+    </ul>
+
+    <h2>🎯 为什么做这个博客</h2>
+    <p>
+      在规划旅行时，我经常被小红书上过度滤镜的照片、抖音上拼凑的碎片信息搞得晕头转向。明明看起来很美的景点，到了现场却大失所望——这就是"网红滤镜"的代价。
+    </p>
+    <p>
+      所以我决定自己写。把最真实的体验、最实用的信息整理成系统化的攻略，让每一个看博客的人都能<strong>少踩坑、多省钱、玩得更尽兴</strong>。
+    </p>
+
+    <img
+      src="https://picsum.photos/seed/travelman/800/360"
+      alt="旅行者眺望远山"
+      style="width:100%;border-radius:16px;margin:2rem 0;box-shadow:0 8px 30px rgba(0,0,0,0.1);"
+      loading="lazy"
+    />
+
+    <h2>📬 联系我 / 关注我</h2>
+    <p>如果你有好的旅行目的地推荐，或者想投稿分享旅行故事：</p>
+    <ul>
+      <li>📧 邮箱：houniao@example.com</li>
+      <li>📕 小红书：@候鸟旅途</li>
+      <li>🎵 抖音：@候鸟旅途</li>
+      <li>📺 B站：@候鸟旅途Official</li>
+    </ul>
+
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="/blog" class="btn btn--accent">📝 查看我的旅行攻略</a>
+    </div>
+  </section>
+</BaseLayout>
