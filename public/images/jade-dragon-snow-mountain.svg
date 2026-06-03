@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="sky2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="50%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#bfdbfe"/>
+    </linearGradient>
+    <linearGradient id="snow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="40%" style="stop-color:#e2e8f0"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky2)"/>
+  <!-- Sun glow -->
+  <circle cx="600" cy="120" r="80" fill="#fbbf24" opacity="0.3"/>
+  <circle cx="600" cy="120" r="50" fill="#fef3c7" opacity="0.5"/>
+  <!-- Far mountains -->
+  <polygon points="0,300 80,200 160,260 250,180 330,230 420,160 500,220 800,140 800,300" fill="#94a3b8"/>
+  <!-- Main snow mountain -->
+  <polygon points="300,300 420,60 540,300" fill="#f1f5f9"/>
+  <polygon points="350,300 420,60 490,300" fill="#ffffff"/>
+  <polygon points="380,300 420,100 460,300" fill="#e2e8f0"/>
+  <!-- Snow cap highlight -->
+  <polygon points="400,60 420,60 420,80 410,70" fill="#ffffff" opacity="0.9"/>
+  <!-- Side mountains -->
+  <polygon points="0,300 120,120 220,300" fill="url(#snow)"/>
+  <polygon points="500,300 620,140 750,300" fill="url(#snow)"/>
+  <!-- Ground -->
+  <rect x="0" y="290" width="800" height="160" fill="#475569"/>
+  <!-- Trees -->
+  <circle cx="100" cy="290" r="25" fill="#1e293b"/>
+  <circle cx="680" cy="285" r="30" fill="#1e293b"/>
+  <circle cx="720" cy="290" r="20" fill="#334155"/>
+  <circle cx="60" cy="295" r="18" fill="#334155"/>
+</svg>
